@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+{% block styles %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="text_center">
+    <table>
+        <tr>
+            <th class="th1"> name</th>
+            <th class="th1"> surname</th>
+            <th class="th1"> feedback</th>
+            <th class="th1"> rating</th>
+        </tr>
+        <tr>
+            <td>{{feedback.name}}</td>
+            <td>{{feedback.surname}}</td>
+            <td>{{feedback.feedback}}</td>
+            <td>{feedback.rating}}</td>
+        </tr>
+
+    </table>
+
+    <h1></h1>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

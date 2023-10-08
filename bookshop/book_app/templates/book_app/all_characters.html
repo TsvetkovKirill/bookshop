@@ -1,0 +1,20 @@
+{% extends 'book_app/base.html' %}
+
+
+{% block name %} Все персонажи {% endblock name %}
+
+
+{% block Content %}
+<h2>Список всех персонажей</h2>
+<ul>
+    {% for character in characters %}
+    <li><a href="{{ character.get_url_characters }}">{{character.name}}</a></li>
+    Имя персонажа - {{ character.name }},
+    Возраст персонажа - {{ character.age }},
+    Статус персонажа - {{ character.status }},
+</ul>
+    {% endfor %}
+
+{% endblock Content %}
+
+

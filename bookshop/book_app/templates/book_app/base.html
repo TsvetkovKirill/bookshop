@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<style>
+
+    /*
+    Это комменты, они прописываются где угодно
+    */
+    <!-- Так выглядят комменты из html -->
+    .name{
+    color:green;
+    text-align:center:
+    }
+    .dotted{
+    border-style: solid;
+    text-align: center;
+    border-width: 10px 10px 10px 10px;
+    }
+    table{
+    margin: auto;
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: black;
+    }
+    tr, td, th{
+    border-style: solid;
+    border-color: black;
+    background-color: yellow;
+    }
+    th.th1{
+    background-color: blue;
+    color: white;
+    }
+    p.one{
+    width: 10%;
+    border: 5px solid green;
+
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 12px;
+    color: red;
+    }
+    #idtyan{
+    width: 776px;
+    margin: right;
+    border: medium solid RGBA(33,23,200,0.3);
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    }
+    #pidor{
+    height: 50px;
+    width: 10%;
+    border: 1px solid #4CAF50;
+    padding: 1px;
+    margin: auto;
+    text-align: center;
+    background-color: green;
+    }
+    #box {
+    background-color: lightgrey;
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: auto;
+    text-align: center;
+    }
+    #marginpadding{
+    width: 500px;
+    margin: auto;
+    border: medium solid RGBA(33,23,200,0.3);
+    background-color: white;
+    text-align: justify;
+    text-transform: uppercase;
+    text-intend: 50px;
+    letter-spacing: 1px;
+    padding: 10px;
+
+    }
+    body {
+    background-image: url('/static/book_app/images/NischV-iXN4.jpg');
+    background-repeat: no-repeat;
+    background-color: #00BFFF;
+    height: 600px;
+    background-position: right top;
+    background-attachment: fixed;
+    <!-- opacity: 0.5; -->
+}
+    .center {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 12px;
+    border-width: medium;
+    border-color: grey;
+    background-color: RGB(204 0 204);
+    margin: 10px 30% 10px 30%;
+    padding-bottom: 30px;
+    }
+
+    .text_center{
+    text-align: center;
+    border: 1px solid black;
+    border-color: yellow;
+    background-color: green;
+    border-width: medium;
+    width: 20%;
+    margin: 10px 50% 10px 40%;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block Title %} {% endblock Title %}</title>
+</head>
+<body>
+{% block styles %}
+
+{% endblock %}
+
+{% block Content %}{% endblock %}
+{% block form %} {% endblock form %}
+<h2>Check it!</h2>
+</body>
+</html>

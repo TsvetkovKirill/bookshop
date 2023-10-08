@@ -1,0 +1,33 @@
+{% extends 'book_app/base.html' %}
+
+
+{% block Title %} Все книги {% endblock Title %}
+
+
+{% block Content %}
+<h2>Список всех книг</h2>
+<ul>
+    {% for book in books %}
+    <li><a href="{{ book.get_url }}">{{book.title}}</a></li>
+<!--        <li><a href="{% url 'book-detail' book.id %}">{{book.title}}</a></li>-->
+    название - {{ book.title }},
+    год - {{ book.year }},
+    рейтинг - {{ book.rating }},
+    бюджет - {{ book.budjet }}
+
+    {% endfor %}
+    <br>
+    <span>Count = {{total}}</span>
+    <br>
+    <span>Средний рейтинг = {{budjet_avg}}</span>
+    <br>
+    <span>Средний бюджет = {{rating_avg}}</span>
+    <br>
+    <span>Мин рейтинг = {{rating_min}}</span>
+    <br>
+    <span>Макс рейтинг = {{rating_max}}</span>
+
+</ul>
+{% endblock Content %}
+
+

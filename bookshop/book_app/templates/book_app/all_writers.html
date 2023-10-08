@@ -1,0 +1,20 @@
+{% extends 'book_app/base.html' %}
+
+
+{% block Title %} Все книги {% endblock Title %}
+
+
+{% block Content %}
+<h2>Список всех книг</h2>
+<ul>
+    {% for writer in writers %}
+    <li><a href="{{ writer.get_url_writers }}">{{writer.full_name}}</a></li>
+        название - {{ writer.last_name }},
+
+</ul>
+    {% endfor %}
+
+{% endblock Content %}
+
+
+

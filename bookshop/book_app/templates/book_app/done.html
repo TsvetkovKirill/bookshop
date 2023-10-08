@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+{% block styles %}
+<p class="one">  {% block title %} Отзыв готов {% endblock %}  </p>
+{% endblock %}
+{% block content %}
+<h2>{{ name}} {{ surname }}, Ваш отзыв успешно обработан, как и Ваше очко</h2>
+{% endblock %}
+
+</body>
+</html>

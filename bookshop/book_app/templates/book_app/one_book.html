@@ -1,0 +1,39 @@
+{% extends 'book_app/base.html' %}
+
+
+{% block Title %} Конкретная книга - {{book.title}} {% endblock Title %}
+
+
+{% block Content %}
+  <h2>Конкретная книга - {{book.title}}</h2>
+  <h3 style="color: red"> Название: {{ book.title|default:"Информации об авторе не найдено" }}</h3>
+  <h3> Рейтинг: {{ book.rating|default:"Рейтинг не известен" }}</h3>
+  <h3> Год: {{ book.year|default:"Год не известен" }}</h3>
+  <h3> Бюджет: {{ book.budjet }} рублей</h3>
+  <h3> Автор: {{ book.author|capfirst }}</h3>
+  <h3> Бестселлер: {{ book.is_best_selling|default:"Не бестселлер" }}</h3>
+  <h3> Info about writer </h3>
+  <h3> Имя: {{ book.writer.first_name }}</h3>
+  <h3> Фамилия: {{ book.writer.last_name }}</h3>
+  <h3> День рождения: {{ book.writer.writer_birthday }}</h3>
+<hr>
+  <h3> Полное имя: {{ book.writer.writer_email }}</h3>
+  <h3> список персонажей </h3>
+  <ul>
+      {% for character in book.characters.all %}
+        <li>{{ character }}</li>
+      {% endfor %}
+  </ul>
+{% endblock Content %}
+
+{% block form %}
+<form>
+  <label for="percent">Проценты:</label>
+  <input type="range" min="14" max="45" id="percent">
+  <br>
+  <label for="lastname">Фамилия:</label>
+  <input type="text" id="lastname" name="lastname">
+  <br><br>
+  <input type="submit" value="Отправить">
+</form>
+{% endblock form %}

@@ -1,0 +1,29 @@
+{% extends 'book_app/base.html' %}
+
+
+{% block Title %} Конкретный автор - {{writer.full_name}} {% endblock Title %}
+
+
+{% block Content %}
+  <h2>Имя конкретного писателя- {{writers_list.first_name}}</h2>
+  <h3 style="color: red"> Название: {{ writers_list.last_name|default:"Информации о фамилии автора не найдено" }}</h3>
+  <h3> День рождения: {{ writers_list.writer_birthday|default:"Рейтинг не известен" }}</h3>
+  <h3> Мыло: {{ writers_list.writer_email|capfirst }}</h3>
+  <h3>Чтобы вывести список книг, написанных писателем. Создать связь один ко многим. Обратиться через функцию</h3>
+  <h3> Список книг: </h3>
+  {% for book in writers_list.book_set.all %}
+    <li> {{ book }}</li>
+  {% endfor %}
+{% endblock Content %}
+
+{% block form %}
+<form>
+  <label for="percent">Проценты:</label>
+  <input type="range" min="14" max="45" id="percent">
+  <br>
+  <label for="lastname">Фамилия:</label>
+  <input type="text" id="lastname" name="lastname">
+  <br><br>
+  <input type="submit" value="Отправить">
+</form>
+{% endblock form %}

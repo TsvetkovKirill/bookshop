@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% load static %}
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+    </style>
+    {% block css_additional %}
+    <link rel="stylesheet" href=" {% static 'book_app\css\styles_app.css' %}"/>
+
+    <img src="{% static 'book_app/images/NischV-iXN4.jpg' %}" width="600" height="1000" alt="что-нибудь">
+
+    <div id="idtyan">Картинка</div>
+    <meta charset="UTF-8">
+    <div> {% block title %} Страница отзыва {% endblock %}</div>
+    {% endblock %}
+</head>
+<body>
+
+<h1>Оставьте отзыв</h1>
+{% block content %}
+<h1 id="para1">Формы для пользователей</h1>
+<form method="post">
+    {% csrf_token %}
+    <br>
+    {%for field in form%}
+    <div class="form-style">
+        {{ field.label_tag }}
+        {{ field }}
+    </div>
+    {%endfor%}
+
+    <button>Отправить</button>
+
+</form>
+{% endblock %}
+
+{% block styles %}
+
+<h1 class="name"> Проверка класса </h1>
+
+<div id="pi"> Проверка работы</div>
+<p class="one">Это бордер Пи</p>
+<div class="dotted"> Это второй бордер</div>
+<div id="marginpadding"> Это маржин. Вообще, этот текст нужен для проверки различных вариантов форматирования текста.
+</div>
+<div id="box">Демонстрация box</div>
+{% endblock %}
+{% block icons %}
+<i class="glyphicon glyphicon-cloud" style="font-size:60px;color:lightblue;"></i>
+{% endblock %}
+
+</body>
+</html>

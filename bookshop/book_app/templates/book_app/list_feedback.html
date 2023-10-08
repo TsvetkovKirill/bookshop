@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+{% block styles %}
+<p class="one">  {% block title %} Отзыв готов {% endblock %}  </p>
+
+{% endblock %}
+{% block content %}
+
+<table>
+    <tr>
+        <th class="th1">Имя</th>
+        <th class="th1">Фамилия</th>
+        <th class="th1">Отзыв</th>
+        <th class="th1">Рейтинг</th>
+    </tr>
+{% for feedback in feedbacks %}
+<tr>
+    <td>{{feedback.name}}</td>
+    <td>{{feedback.surname}}</td>
+    <td>{{feedback.feedback}}</td>
+    <td>{{feedback.rating}}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+
+</body>
+</html>
